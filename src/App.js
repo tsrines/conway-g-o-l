@@ -48,10 +48,15 @@ class GameOfLife extends React.Component {
     for (let i = 0; i < 30; i++) {
       config.push([]);
       for (let j = 0; j < 50; j++) {
-        if (cells === "randomize") {
-          config[i].push(Math.random() < 0.5 ? 0 : 1);
-        } else {
-          config[i].push(cells);
+        switch (cells) {
+          case "randomize":
+            config[i].push(Math.random() < 0.5 ? 0 : 1);
+            break;
+          case "clear":
+            config[i].push(0);
+            break;
+          default:
+            config[i].push(cells);
         }
       }
     }
@@ -86,11 +91,17 @@ class GameOfLife extends React.Component {
   randomize() {
     // Stop the simulation
     // Randomize the board
+    this.setState({
+      currentBoard: this.createBoard("randomize"),
+      running: false
+    });
   }
 
   clearBoard() {
-    // stop the simulation
-    // make the board empty again
+    this.setState({
+      currentBoard: this.createBoard("clear"),
+      running: false
+    });
   }
 
   convertToOneDimension(multiDimArray) {
