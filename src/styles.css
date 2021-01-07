@@ -1,0 +1,139 @@
+body {
+  background: black;
+  font-family: Orbitron;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: #66ff33;
+  font-family: Shrikhand;
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 3px;
+}
+
+.boardWrapper {
+  padding: 5px;
+  background: #262626;
+  border-radius: 5px;
+}
+.boardWrapper .board {
+  height: 450px;
+  width: 750px;
+  border-top: 1px solid #262626;
+  border-left: 1px solid #262626;
+}
+.boardWrapper .board .cell {
+  height: 15px;
+  width: 15px;
+  box-sizing: border-box;
+  border-right: 1px solid #262626;
+  border-bottom: 1px solid #262626;
+  float: left;
+  font-size: 7px;
+  color: orange;
+}
+
+.bottomTab {
+  width: 300px;
+  text-align: center;
+  margin: 15px auto;
+  border-radius: 10px;
+  background: #262626;
+  padding: 8px 0;
+  position: relative;
+}
+.bottomTab div {
+  width: 258.6206896552px;
+  margin: 3px auto;
+  padding-top: 7px;
+  padding-bottom: 4px;
+  background: #66ff33;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.bottomTab div:active {
+  outline: 1px solid #d8e4ff;
+}
+.bottomTab div:first-of-type {
+  cursor: default;
+}
+.bottomTab div:first-of-type div {
+  padding: 0;
+  padding-top: 5px;
+}
+.bottomTab div:first-of-type:active {
+  outline: none;
+}
+
+@media screen and (max-width: 700px) {
+  #app {
+    height: 100%;
+    transform: scale(0.7);
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    -o-transform: scale(0.7);
+  }
+}
+@media screen and (max-width: 500px) {
+  #app {
+    height: 100%;
+    transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    -o-transform: scale(0.6);
+  }
+}
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.patternsWrapper {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  background: #262626 !important;
+  border-radius: 10px !important;
+  padding: 21px;
+}
+
+.patternsWrapper,
+.back {
+  outline: none !important;
+}
+
+.pattern:hover {
+  cursor: pointer !important;
+}
+.pattern:active {
+  outline: 1px solid #d8e4ff !important;
+}
+
+.toggleShowPatterns-enter {
+  opacity: 0.01;
+}
+
+.toggleShowPatterns-enter.toggleShowPatterns-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.toggleShowPatterns-leave {
+  opacity: 1;
+}
+
+.toggleShowPatterns-leave.toggleShowPatterns-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
